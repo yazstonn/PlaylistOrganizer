@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1 Pagination Example
+
+    //- Afficher les éléments de la page actuelle
+    ul
+      each item in data
+        li= item.title
+
+    //- Navigation de pagination
+    nav.pagination
+      if currentPage > 1
+        a(href=`?page=${currentPage - 1}`) Previous
+      else
+        span.disabled Previous
+
+      if currentPage < totalPages
+        a(href=`?page=${currentPage + 1}`) Next
+      else
+        span.disabled Next
+   
+    
