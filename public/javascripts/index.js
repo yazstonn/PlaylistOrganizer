@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     function renderPlaylists(playlists) {
         playlists.forEach(playlist => {
             const card = document.createElement('div');
-            card.classList.add('card');
+            card.classList.add('playlist-card');
 
             card.innerHTML = `
                 <h3>${playlist}</h3>

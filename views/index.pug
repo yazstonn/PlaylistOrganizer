@@ -1,6 +1,8 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  div#playlist-container
+  header.main-header
+    h1 Playlist Manager
+  div.container
+    h2 Your Playlists
+    div#playlist-container.playlist-grid

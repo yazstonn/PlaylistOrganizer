@@ -1,144 +1,91 @@
-/* stylesheets/style.css */
+/* En-tête principal */
 .main-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  background-color: #588157;
-  border-bottom: 1px solid #ddd;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #588157;
+    border-bottom: 1px solid #ddd;
 }
 
-/* Lien retour */
-.back-link {
-  position: absolute;
-  left: 1rem; /* Aligne à gauche */
-  font-size: 1rem;
-  color: #fffdd0;
-  text-decoration: none;
-}
 
-.back-link:hover {
-  text-decoration: underline;
-}
-
+/* Titre principal */
 .main-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-/* Général */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-/* En-tête */
-header {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 /* Conteneur principal */
-main {
-  padding: 2rem;
+.container {
+    max-width: 80%;
+    margin: 2rem auto;
+    text-align: center;
 }
 
-/* Détails de la playlist */
-#playlist-details {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-#playlist-details h2 {
-  border-bottom: 2px solid #4CAF50;
-  padding-bottom: 0.5rem;
-}
-
-/* Grille pour les chansons */
-.songs-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 colonnes */
-  gap: 0.5rem; /* Réduit l'espacement entre les éléments */
-  margin: 1rem auto; /* Centré horizontalement */
-  max-width: 80%; /* Limite la largeur pour qu'elle soit mieux centrée */
-}
-
-/* Style pour les chansons */
-.song-card {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 0.5rem; /* Espacement interne réduit */
-  text-align: center;
-  font-size: 0.9rem; /* Texte plus petit */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Ajout d'un hover pour effet interactif */
-.song-card:hover {
-  background: #eee;
-  transform: scale(1.02); /* Légère mise en avant */
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-/* 3 colonnes sur des écrans moyens */
-@media (max-width: 992px) {
-  .songs-container {
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+/* Titre principal */
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
-}
-
-/* 2 colonnes sur des petits écrans */
-@media (max-width: 768px) {
-  .songs-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  
+  /* Conteneur principal */
+  .container {
+    max-width: 80%;
+    margin: 2rem auto;
+    text-align: center;
   }
-}
-
-/* 1 colonne sur des écrans très petits */
-@media (max-width: 576px) {
-  .songs-container {
-    grid-template-columns: 1fr; /* 1 colonne */
+  
+  /* Grille des playlists */
+  .playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colonnes */
+    gap: 1rem; /* Espace réduit entre les éléments */
+    justify-content: center;
+    align-items: start;
+    margin-top: 2rem;
   }
-}
-
-.song-card {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 1rem;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.song-card h3 {
-  font-size: 1rem;
-  margin: 0 0 0.5rem;
-}
-
-.song-card p {
-  font-size: 0.875rem; /* Texte plus petit */
-  margin: 0.5rem 0;
-}
-
-/* Pied de page */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
+  
+  /* Carte des playlists */
+  .playlist-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover sur la carte */
+  .playlist-card:hover {
+    background-color: #f7f7f7;
+    transform: scale(1.03);
+  }
+  
+  /* Informations dans la carte */
+  .playlist-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .playlist-card p {
+    margin: 0;
+    color: #555;
+    font-size: 0.85rem;
+  }
