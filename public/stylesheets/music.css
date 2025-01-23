@@ -12,7 +12,8 @@
 /* Lien retour */
 .back-link {
   position: absolute;
-  left: 1rem; /* Aligne à gauche */
+  left: 1rem;
+  /* Aligne à gauche */
   font-size: 1rem;
   color: #fffdd0;
   text-decoration: none;
@@ -27,6 +28,7 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 /* Général */
 body {
   font-family: Arial, sans-serif;
@@ -39,7 +41,7 @@ body {
 /* En-tête */
 header {
   background-color: #4CAF50;
-  color: white;
+  color: #fffdd0;
   padding: 1rem;
   text-align: center;
 }
@@ -62,74 +64,82 @@ main {
   padding-bottom: 0.5rem;
 }
 
-/* Grille pour les chansons */
 .songs-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 colonnes */
-  gap: 0.5rem; /* Réduit l'espacement entre les éléments */
-  margin: 1rem auto; /* Centré horizontalement */
-  max-width: 80%; /* Limite la largeur pour qu'elle soit mieux centrée */
-}
-
-/* Style pour les chansons */
-.song-card {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 0.5rem; /* Espacement interne réduit */
-  text-align: center;
-  font-size: 0.9rem; /* Texte plus petit */
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  gap: 0;
+}
+
+.song-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 0;
 }
 
 /* Ajout d'un hover pour effet interactif */
 .song-card:hover {
   background: #eee;
-  transform: scale(1.02); /* Légère mise en avant */
+  transform: scale(1.02);
+  /* Légère mise en avant */
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 /* 3 colonnes sur des écrans moyens */
 @media (max-width: 992px) {
   .songs-container {
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 colonnes */
   }
 }
 
 /* 2 colonnes sur des petits écrans */
 @media (max-width: 768px) {
   .songs-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 colonnes */
   }
 }
 
 /* 1 colonne sur des écrans très petits */
 @media (max-width: 576px) {
   .songs-container {
-    grid-template-columns: 1fr; /* 1 colonne */
+    grid-template-columns: 1fr;
+    /* 1 colonne */
   }
 }
 
 .song-card {
-  background-color: #f9f9f9;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  background: #f9f9f9;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 1rem;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  text-decoration: none;
+  color: in;
 }
 
 .song-card h3 {
-  font-size: 1rem;
-  margin: 0 0 0.5rem;
+  font-weight: bold;
+  margin: 0;
+  padding-left: 1rem;
+  margin-right: 1rem;
 }
 
+
 .song-card p {
-  font-size: 0.875rem; /* Texte plus petit */
-  margin: 0.5rem 0;
+  margin: 0;
+  margin-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* Pied de page */
@@ -141,4 +151,64 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-button {
+  width: 10%;
+  height: 50px;
+  margin: 0 auto;
+  background-color: #3498db;
+  /* Bleu élégant */
+  color: #ffffff;
+  /* Couleur blanche pour le texte */
+  text-decoration: none;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.pagination-button:hover {
+  background-color: #2980b9;
+  /* Bleu foncé au survol */
+  transform: scale(1.05);
+  /* Zoom léger */
+}
+
+.pagination-button:active {
+  background-color: #1f5a80;
+  /* Encore plus foncé lors du clic */
+  transform: scale(0.95);
+  /* Effet de clic */
+}
+
+.pagination-button.disabled {
+  background-color: #bdc3c7;
+  /* Couleur grise */
+  cursor: not-allowed;
+  pointer-events: none;
+  /* Désactive les clics */
+  transform: none;
+}
+
+.pagination-button.disabled:hover {
+  background-color: #bdc3c7;
+  /* Empêche les changements au survol */
+  transform: none;
 }

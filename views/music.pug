@@ -1,29 +1,29 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/music.css')
-  body
-    header.main-header
-        a.back-link(href="/") ← Back to Home
-        h1 Your Playlist
-    main
-      section#playlist-details
-        h2 Détails de la Playlist
-        .songs-container
-          each song in data
-            .song-card
-              h3= song.title
-              p Artiste : #{song.channelTitle || 'Inconnu'}
-    nav.pagination
-      if currentPage > 1
-        a(href=`?page=${currentPage - 1}`) Previous
-      else
-        span.disabled Previous
+    head
+        title= title
+        link(rel='stylesheet' href='/stylesheets/music.css')
+    body
+        header.main-header
+            a.back-link(href="/") ← Back to Home
+            h1 Your Playlist
+        main
+            section#playlist-details
+                h2 Détails de la Playlist
+                .songs-container
+                    each song in data
+                        a.song-card(href="https://www.youtube.com/watch?v="+song.videoId target="_blank")
+                            h3= song.title
+                            p Artiste : #{song.channelTitle || 'Inconnu'}
+        div.pagination-buttons
+            nav.pagination
+    if currentPage > 1
+        a.pagination-button(href=`?page=${currentPage - 1}`) Previous
+    else
+        span.pagination-button.disabled Previous
 
-      if currentPage < totalPages
-        a(href=`?page=${currentPage + 1}`) Next
-      else
-        span.disabled Next
-   
-    
+    if currentPage < totalPages
+        a.pagination-button(href=`?page=${currentPage + 1}`) Next
+    else
+        span.pagination-button.disabled Next
+
