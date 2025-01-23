@@ -1,14 +1,17 @@
 extends layout
 
 block content
-  h1 Pagination Example
-
-    //- Afficher les éléments de la page actuelle
-    ul
-      each item in data
-        li= item.title
-
-    //- Navigation de pagination
+    header.main-header
+        a.back-link(href="/") ← Back to Home
+        h1 Your Playlist
+    main
+      section#playlist-details
+        h2 Détails de la Playlist
+        .songs-container
+          each song in data
+            .song-card
+              h3= song.title
+              p Artiste : #{song.channelTitle || 'Inconnu'}
     nav.pagination
       if currentPage > 1
         a(href=`?page=${currentPage - 1}`) Previous
