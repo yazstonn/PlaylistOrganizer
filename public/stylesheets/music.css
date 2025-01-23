@@ -76,7 +76,6 @@ main {
 .song-card {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 1rem;
   background: #f9f9f9;
@@ -125,22 +124,22 @@ main {
   border: 1px solid #ddd;
   padding: 0;
   text-decoration: none;
-  color: in;
-}
+  color: inherit;
+ }
 
 .song-card h3 {
   font-weight: bold;
   margin: 0;
   padding-left: 1rem;
-  margin-right: 1rem;
-}
+ }
 
 
 .song-card p {
   margin: 0;
-  margin-left: 1rem;
-  padding-right: 1rem;
-}
+  padding-left: 2rem;
+  position: relative;
+  z-index: 1;
+ }
 
 /* Pied de page */
 footer {
@@ -211,4 +210,41 @@ footer {
   background-color: #bdc3c7;
   /* Empêche les changements au survol */
   transform: none;
+}
+
+.context-menu-btn {
+  margin-left: auto;
+  padding-right: 1rem;
+  cursor: pointer;
+  z-index: 21;
+  position: relative;
+
+}
+
+.context-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 20;
+  min-width: 120px;
+ }
+ 
+
+.context-menu-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.context-menu-item:hover {
+  background: #f0f0f0;
 }
