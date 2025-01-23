@@ -5,7 +5,7 @@ document.querySelectorAll('.context-menu-btn').forEach(btn => {
       
       const contextMenu = this.nextElementSibling;
       contextMenu.style.display = 
-        contextMenu.style.display === 'block' ? 'none' : 'block';
+        contextMenu.style.display === 'block' ? 'none' : 'inline-block';
     });
   
     // Fermer le menu en cliquant ailleurs

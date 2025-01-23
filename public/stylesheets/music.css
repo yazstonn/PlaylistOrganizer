@@ -213,17 +213,22 @@ footer {
 }
 
 .context-menu-btn {
-  margin-left: auto;
-  padding-right: 1rem;
-  cursor: pointer;
-  z-index: 21;
-  position: relative;
 
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
+
+
 
 .context-menu {
   display: none;
-  position: absolute;
+  position: relative;
   right: 0;
   top: 100%;
   background: white;
@@ -232,19 +237,41 @@ footer {
   z-index: 20;
   min-width: 120px;
  }
+
+ /* Organisation verticale */
+.context-menu-item:nth-child(2) {
+  top: calc(100% + 10px); /* Ajuster la position verticale du 2e élément */
+}
+
+.context-menu-item:nth-child(3) {
+  top: calc(100% + 20px); /* Ajuster la position verticale du 3e élément */
+}
+
+/* Empile les items verticalement */
+.context-menu-item + .context-menu-item {
+  margin-top: 5px;
+}
+
+/* Affichage des items au survol */
+.context-menu:hover .context-menu-item {
+  display: block;
+}
  
 
 .context-menu-item {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  padding: 0.5rem 1rem;
-  z-index: 1000;
-  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 5px); /* Place les items juste en dessous du bouton */
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 15px;
+  white-space: nowrap;
+  z-index: 9;
+  width: 150px;
 }
 
 .context-menu-item:hover {
-  background: #f0f0f0;
+  background-color: #f0f0f0;
 }
